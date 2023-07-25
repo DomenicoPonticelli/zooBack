@@ -12,10 +12,6 @@ public class Areaanimaliditerra {
     @Column(name = "id", nullable = false)
     private Integer id;
 
-    @NotNull
-    @Column(name = "estensioneTotale", nullable = false)
-    private Integer estensioneTotale;
-
     @Size(max = 256)
     @NotNull
     @Column(name = "tipo", nullable = false, length = 256)
@@ -31,14 +27,6 @@ public class Areaanimaliditerra {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Integer getEstensioneTotale() {
-        return estensioneTotale;
-    }
-
-    public void setEstensioneTotale(Integer estensioneTotale) {
-        this.estensioneTotale = estensioneTotale;
     }
 
     public String getTipo() {
