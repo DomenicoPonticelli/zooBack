@@ -12,8 +12,9 @@ public class Areacompetenza {
     private Integer id;
 
     @NotNull
-    @Column(name = "idUser", nullable = false)
-    private Integer idUser;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "id_user", nullable = false)
+    private UserEntity idUser;
 
     public Integer getId() {
         return id;
@@ -23,11 +24,11 @@ public class Areacompetenza {
         this.id = id;
     }
 
-    public Integer getIdUser() {
+    public UserEntity getIdUser() {
         return idUser;
     }
 
-    public void setIdUser(Integer idUser) {
+    public void setIdUser(UserEntity idUser) {
         this.idUser = idUser;
     }
 

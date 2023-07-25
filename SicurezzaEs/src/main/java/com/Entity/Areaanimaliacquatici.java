@@ -12,7 +12,7 @@ public class Areaanimaliacquatici {
     private Integer id;
 
     @NotNull
-    @Column(name = "estensioneTotale", nullable = false)
+    @Column(name = "estensione_totale", nullable = false)
     private Integer estensioneTotale;
 
     public Integer getId() {

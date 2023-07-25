@@ -28,18 +28,18 @@ public class Animale {
     @Column(name = "tipo", nullable = false, length = 150)
     private String tipo;
 
-    @NotNull
-    @Column(name = "dataDiNascita", nullable = false)
-    private LocalDate dataDiNascita;
-
     @Size(max = 256)
     @NotNull
     @Column(name = "provenienza", nullable = false, length = 256)
     private String provenienza;
 
-    @NotNull
-    @Column(name = "img", nullable = false)
+    @Size(max = 256)
+    @Column(name = "img", length = 256)
     private String img;
+
+    @NotNull
+    @Column(name = "data_di_nascita", nullable = false)
+    private LocalDate dataDiNascita;
 
     public Integer getId() {
         return id;
@@ -73,14 +73,6 @@ public class Animale {
         this.tipo = tipo;
     }
 
-    public LocalDate getDataDiNascita() {
-        return dataDiNascita;
-    }
-
-    public void setDataDiNascita(LocalDate dataDiNascita) {
-        this.dataDiNascita = dataDiNascita;
-    }
-
     public String getProvenienza() {
         return provenienza;
     }
@@ -95,6 +87,14 @@ public class Animale {
 
     public void setImg(String img) {
         this.img = img;
+    }
+
+    public LocalDate getDataDiNascita() {
+        return dataDiNascita;
+    }
+
+    public void setDataDiNascita(LocalDate dataDiNascita) {
+        this.dataDiNascita = dataDiNascita;
     }
 
 }

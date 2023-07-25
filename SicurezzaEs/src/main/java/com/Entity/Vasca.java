@@ -15,28 +15,28 @@ public class Vasca {
     @Column(name = "id", nullable = false)
     private Integer id;
 
-    @NotNull
-    @Column(name = "litriContenuti", nullable = false)
-    private Integer litriContenuti;
-
-    @NotNull
-    @Column(name = "numeroAnimali", nullable = false)
-    private Integer numeroAnimali;
-
-    @NotNull
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    @JoinColumn(name = "IdAreaAnimaliAcquatici", nullable = false)
-    private Areaanimaliacquatici idAreaAnimaliAcquatici;
-
     @Size(max = 256)
     @NotNull
     @Column(name = "habitat", nullable = false, length = 256)
     private String habitat;
 
-    @NotNull
-    @Column(name = "img", nullable = false)
+    @Size(max = 256)
+    @Column(name = "img", length = 256)
     private String img;
+
+    @NotNull
+    @Column(name = "litri_contenuti", nullable = false)
+    private Integer litriContenuti;
+
+    @NotNull
+    @Column(name = "numero_animali", nullable = false)
+    private Integer numeroAnimali;
+
+    @NotNull
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JoinColumn(name = "id_area_animali_acquatici", nullable = false)
+    private Areaanimaliacquatici idAreaAnimaliAcquatici;
 
     public Integer getId() {
         return id;
@@ -44,6 +44,22 @@ public class Vasca {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getHabitat() {
+        return habitat;
+    }
+
+    public void setHabitat(String habitat) {
+        this.habitat = habitat;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
     }
 
     public Integer getLitriContenuti() {
@@ -68,22 +84,6 @@ public class Vasca {
 
     public void setIdAreaAnimaliAcquatici(Areaanimaliacquatici idAreaAnimaliAcquatici) {
         this.idAreaAnimaliAcquatici = idAreaAnimaliAcquatici;
-    }
-
-    public String getHabitat() {
-        return habitat;
-    }
-
-    public void setHabitat(String habitat) {
-        this.habitat = habitat;
-    }
-
-    public String getImg() {
-        return img;
-    }
-
-    public void setImg(String img) {
-        this.img = img;
     }
 
 }

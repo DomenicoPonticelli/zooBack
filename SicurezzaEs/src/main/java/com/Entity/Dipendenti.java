@@ -31,26 +31,25 @@ public class Dipendenti {
     @Column(name = "stipendio", nullable = false)
     private Float stipendio;
 
+    @Size(max = 256)
+    @Column(name = "img", length = 256)
+    private String img;
+
+    @Column(name = "cv")
+    private byte[] cv;
+
     @NotNull
-    @Column(name = "dataAssunzione", nullable = false)
+    @Column(name = "data_assunzione", nullable = false)
     private LocalDate dataAssunzione;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_supervisore")
+    private Dipendenti idSupervisore;
 
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "idUser", nullable = false)
+    @JoinColumn(name = "id_user", nullable = false)
     private UserEntity idUser;
-
-    @NotNull
-    @Column(name = "img", nullable = false)
-    private String img;
-
-    @NotNull
-    @Column(name = "cv", nullable = false)
-    private byte[] cv;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "idSupervisore")
-    private Dipendenti idSupervisore;
 
     public Integer getId() {
         return id;
@@ -92,22 +91,6 @@ public class Dipendenti {
         this.stipendio = stipendio;
     }
 
-    public LocalDate getDataAssunzione() {
-        return dataAssunzione;
-    }
-
-    public void setDataAssunzione(LocalDate dataAssunzione) {
-        this.dataAssunzione = dataAssunzione;
-    }
-
-    public UserEntity getIdUser() {
-        return idUser;
-    }
-
-    public void setIdUser(UserEntity idUser) {
-        this.idUser = idUser;
-    }
-
     public String getImg() {
         return img;
     }
@@ -124,12 +107,28 @@ public class Dipendenti {
         this.cv = cv;
     }
 
+    public LocalDate getDataAssunzione() {
+        return dataAssunzione;
+    }
+
+    public void setDataAssunzione(LocalDate dataAssunzione) {
+        this.dataAssunzione = dataAssunzione;
+    }
+
     public Dipendenti getIdSupervisore() {
         return idSupervisore;
     }
 
     public void setIdSupervisore(Dipendenti idSupervisore) {
         this.idSupervisore = idSupervisore;
+    }
+
+    public UserEntity getIdUser() {
+        return idUser;
+    }
+
+    public void setIdUser(UserEntity idUser) {
+        this.idUser = idUser;
     }
 
 }

@@ -1,7 +1,6 @@
 package com.Controller;
 
 import com.Entity.Animale;
-import com.Repository.AnimaleRepository;
 import com.Service.AnimaleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

@@ -4,7 +4,7 @@ import com.Entity.Prenotazioni;
 import com.Entity.Visita;
 import com.Repository.PrenotazioniRepository;
 import com.Repository.VisitaRepository;
-import jdk.vm.ci.meta.Local;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

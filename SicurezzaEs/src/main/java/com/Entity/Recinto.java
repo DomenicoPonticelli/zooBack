@@ -34,9 +34,23 @@ public class Recinto {
     @Column(name = "habitat", nullable = false, length = 256)
     private String habitat;
 
-    @NotNull
-    @Column(name = "img", nullable = false)
+    @Size(max = 256)
+    @Column(name = "img", length = 256)
     private String img;
+
+    @NotNull
+    @Column(name = "estensione_recinto", nullable = false)
+    private Integer estensioneRecinto1;
+
+    @NotNull
+    @Column(name = "numero_animali", nullable = false)
+    private Integer numeroAnimali1;
+
+    @NotNull
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JoinColumn(name = "id_area_animali_di_terra", nullable = false)
+    private Areaanimaliditerra idAreaAnimaliDiTerra1;
 
     public Integer getId() {
         return id;
@@ -84,6 +98,30 @@ public class Recinto {
 
     public void setImg(String img) {
         this.img = img;
+    }
+
+    public Integer getEstensioneRecinto1() {
+        return estensioneRecinto1;
+    }
+
+    public void setEstensioneRecinto1(Integer estensioneRecinto1) {
+        this.estensioneRecinto1 = estensioneRecinto1;
+    }
+
+    public Integer getNumeroAnimali1() {
+        return numeroAnimali1;
+    }
+
+    public void setNumeroAnimali1(Integer numeroAnimali1) {
+        this.numeroAnimali1 = numeroAnimali1;
+    }
+
+    public Areaanimaliditerra getIdAreaAnimaliDiTerra1() {
+        return idAreaAnimaliDiTerra1;
+    }
+
+    public void setIdAreaAnimaliDiTerra1(Areaanimaliditerra idAreaAnimaliDiTerra1) {
+        this.idAreaAnimaliDiTerra1 = idAreaAnimaliDiTerra1;
     }
 
 }

@@ -1,5 +1,6 @@
 package com.Controller;
 
+import com.Entity.Visita;
 import com.Service.VisitaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
