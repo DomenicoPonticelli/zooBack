@@ -39,7 +39,7 @@ public class Animale {
 
     @NotNull
     @Column(name = "img", nullable = false)
-    private byte[] img;
+    private String img;
 
     public Integer getId() {
         return id;
@@ -89,11 +89,11 @@ public class Animale {
         this.provenienza = provenienza;
     }
 
-    public byte[] getImg() {
+    public String getImg() {
         return img;
     }
 
-    public void setImg(byte[] img) {
+    public void setImg(String img) {
         this.img = img;
     }
 

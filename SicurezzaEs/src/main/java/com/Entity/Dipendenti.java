@@ -42,7 +42,7 @@ public class Dipendenti {
 
     @NotNull
     @Column(name = "img", nullable = false)
-    private byte[] img;
+    private String img;
 
     @NotNull
     @Column(name = "cv", nullable = false)
@@ -108,11 +108,11 @@ public class Dipendenti {
         this.idUser = idUser;
     }
 
-    public byte[] getImg() {
+    public String getImg() {
         return img;
     }
 
-    public void setImg(byte[] img) {
+    public void setImg(String img) {
         this.img = img;
     }
 
